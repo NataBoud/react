@@ -8,22 +8,19 @@ import { ErrorBoundary } from "react-error-boundary";
 import { Alert } from "./components/Alert.jsx";
 import { Header } from "./components/Header.jsx";
 
-
 // Observer lorsque le # change au niveau de la page
 // un hook personalise qui renvoie un objet avec le nom de la page
-
-
 
 function App() {
 
   //la déstructuration { page }  permet d'extraire directement page de l'objet retourné par useHashNavigation().
-  const { page } = useHashNavigation()
-  const pageContent = getPageContent(page)
+  const { page, param } = useHashNavigation()
+  const pageContent = getPageContent(page, param)
 
   return (
     <>
       <Header page={page}/>
-      <div className="container my-3">
+      <div className="container ">
         <ErrorBoundary FallbackComponent={PageError}>
           {pageContent}
         </ErrorBoundary>
@@ -36,17 +33,18 @@ function PageError({ error }) {
   return <Alert type="danger">{error.toString()}</Alert>
 }
 
-function getPageContent(page) {
-  if (page === 'home') {
-    return <Home />
+function getPageContent(page, param) {
+  if (page === "home") {
+    return <Home />;
   }
-  if (page === 'contact') {
-    return <Contact />
+  if (page === "contact") {
+    return <Contact />;
   }
-  if (page === 'post') {
-    return <Single />
+  if (page === "post") {
+    return <Single postId={param} />;
   }
-  return <NotFound page={page} />
+  return <NotFound page={page} />;
 }
 
-export default App
+export default App;
+

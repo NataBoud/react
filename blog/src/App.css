@@ -1,11 +1,24 @@
+body {
+  background-color: rgb(235, 232, 232);
+}
+
 img {
   border-radius: 0.35rem 0.35rem 0 0;
+}
+.img-cover {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.35rem;
 }
 .description-truncate {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .card-title {
@@ -18,4 +31,31 @@ img {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+#light {
+  border: 1px solid #6c757d;
+}
+
+a {
+  text-decoration: none;
+  color: #6c757d;
+}
+
+a:hover {
+  color: #565e64;
+}
+
+.content {
+  margin-top: 8rem;
+  border-radius: 0.35rem;
+  max-width: 900px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.container {
+  margin-top: 3rem;
 }

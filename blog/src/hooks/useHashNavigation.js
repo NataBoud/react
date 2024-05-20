@@ -13,8 +13,29 @@ export function useHashNavigation () {
         }
     }, []);
 
+
+    const cleanedHash = hash.replaceAll('#', '').toLowerCase()
+
     return {
-        page: hash.replaceAll('#', '').toLowerCase() || 'home'
-    }
+      page: cleanedHash ? cleanedHash.split(":")[0] : "home",
+      param: cleanedHash.split(":")[1],
+    };
 
 }
+
+// Cas 1 : #home
+
+// hash = "#home"
+// cleanedHash = "home"
+// cleanedHash.split(":") = ["home"]
+// page = "home"
+// param = undefined
+
+
+// Cas 2 : #post:123
+
+// hash = "#post:123"
+// cleanedHash = "post:123"
+// cleanedHash.split(":") = ["post", "123"]
+// page = "post"
+// param = "123"

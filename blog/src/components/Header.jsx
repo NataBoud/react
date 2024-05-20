@@ -1,5 +1,4 @@
 /**
- *
  * @param {string} page
  */
 
@@ -13,7 +12,7 @@ export function Header({ page }) {
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
-                    MonSite
+                    MonBlog
                 </a>
                 <button
                     onClick={toggleExpanded}
